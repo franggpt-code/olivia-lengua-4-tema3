@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="es" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Lengua 4.º · Tema 3: Prefijos, Palabras Llanas y Demostrativos | Entrenador de Olivia</title>
+  
+  <!-- CSS Precompilado de Tailwind y Estilos Personalizados Blindados -->
+  <link rel="stylesheet" href="css/tailwind.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Favicon amigable -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22 100%22><text y=%22.9em%22 font-size=%2290%22>📖</text></svg>">
+</head>
+<body class="flex flex-col min-h-full font-sans antialiased text-slate-800 bg-amber-50/20">
+
+  <!-- =========================================================================
+       CABECERA PRINCIPAL FIJA Y SÓLIDA (BLINDAJE DE CONTRASTE Y SUPERPOSICIÓN)
+       ========================================================================= -->
+  <header class="app-header">
+    <div class="max-w-6xl mx-auto px-4 py-2.5 flex items-center justify-between gap-3">
+      
+      <!-- Marca y Asignatura -->
+      <div class="flex items-center gap-3 cursor-pointer" onclick="app.navigate('home')">
+        <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-amber-600 to-orange-600 flex items-center justify-center text-2xl shadow-md text-white">
+          📖
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <h1 class="text-lg font-black font-display tracking-tight text-slate-900 leading-none">Lengua 4.º</h1>
+            <span class="bg-amber-100 text-amber-800 text-xs px-2 py-0.5 rounded-full font-extrabold">TEMA 3</span>
+          </div>
+          <p class="text-xs text-slate-500 font-semibold">Prefijos, Llanas y Demostrativos · Entrenador de Olivia · Santillana CLAVES</p>
+        </div>
+      </div>
+
+      <!-- Navegación de Escritorio -->
+      <nav class="hidden md:flex items-center gap-1 text-sm font-bold text-slate-600">
+        <button onclick="app.navigate('home')" id="nav-home" class="px-3 py-1.5 rounded-xl text-amber-700 bg-amber-50 font-black transition-colors">🏠 Inicio</button>
+        <button onclick="app.navigate('misiones')" id="nav-misiones" class="px-3 py-1.5 rounded-xl hover:text-amber-700 hover:bg-amber-50 transition-colors">🎯 Misiones</button>
+        <button onclick="app.navigate('examen')" id="nav-examen" class="px-3 py-1.5 rounded-xl hover:text-amber-700 hover:bg-amber-50 transition-colors">🏆 Examen</button>
+        <button onclick="app.navigate('express')" id="nav-express" class="px-3 py-1.5 rounded-xl hover:text-amber-700 hover:bg-amber-50 transition-colors">⚡ Express</button>
+        <button onclick="app.navigate('arcade')" id="nav-arcade" class="px-3 py-1.5 rounded-xl hover:text-amber-700 hover:bg-amber-50 transition-colors">🕹️ Arcade</button>
+        <button onclick="app.navigate('laboratorio')" id="nav-laboratorio" class="px-3 py-1.5 rounded-xl hover:text-amber-700 hover:bg-amber-50 transition-colors">🧪 Laboratorio</button>
+        <button onclick="app.navigate('chuleta')" id="nav-chuleta" class="px-3 py-1.5 rounded-xl hover:text-amber-700 hover:bg-amber-50 transition-colors">📖 Esquemas</button>
+      </nav>
+
+      <!-- Controles de Audio, Voz y Estrellas -->
+      <div class="flex items-center gap-2">
+        <!-- Contador de Estrellas -->
+        <div class="flex items-center gap-1.5 bg-amber-50 border border-amber-300 px-3 py-1 rounded-full text-amber-900 font-black text-sm shadow-xs">
+          <span class="text-base">⭐</span>
+          <span id="star-count">0</span>
+        </div>
+
+        <!-- Botón Voz Lectora -->
+        <button onclick="app.toggleVoice()" id="btn-voice" class="w-9 h-9 rounded-xl border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-slate-100 transition-colors" title="Activar/Desactivar lectura en voz alta">
+          🗣️
+        </button>
+
+        <!-- Botón Sonidos -->
+        <button onclick="app.toggleSound()" id="btn-sound" class="w-9 h-9 rounded-xl border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-slate-100 transition-colors" title="Activar/Desactivar efectos de sonido">
+          🔊
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Barra de Navegación Móvil Inferior -->
+    <div class="mobile-subnav md:hidden flex overflow-x-auto gap-2 px-4 py-2.5 border-t border-slate-200 bg-slate-50 text-xs font-bold scrollbar-none">
+      <button onclick="app.navigate('home')" class="whitespace-nowrap px-3 py-1 rounded-lg bg-white border border-slate-200 shadow-xs">🏠 Inicio</button>
+      <button onclick="app.navigate('misiones')" class="whitespace-nowrap px-3 py-1 rounded-lg bg-white border border-slate-200 shadow-xs">🎯 Misiones</button>
+      <button onclick="app.navigate('examen')" class="whitespace-nowrap px-3 py-1 rounded-lg bg-white border border-slate-200 shadow-xs">🏆 Examen</button>
+      <button onclick="app.navigate('express')" class="whitespace-nowrap px-3 py-1 rounded-lg bg-white border border-slate-200 shadow-xs">⚡ Express</button>
+      <button onclick="app.navigate('arcade')" class="whitespace-nowrap px-3 py-1 rounded-lg bg-white border border-slate-200 shadow-xs">🕹️ Arcade</button>
+      <button onclick="app.navigate('laboratorio')" class="whitespace-nowrap px-3 py-1 rounded-lg bg-white border border-slate-200 shadow-xs">🧪 Laboratorio</button>
+      <button onclick="app.navigate('chuleta')" class="whitespace-nowrap px-3 py-1 rounded-lg bg-white border border-slate-200 shadow-xs">📖 Esquemas</button>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       CONTENEDOR DINÁMICO DE VISTAS (SPA)
+       ========================================================================= -->
+  <main class="app-main flex-1 max-w-6xl w-full mx-auto px-4 py-6">
+
+    <!-- ---------------------------------------------------------------------
+         VISTA 1: INICIO (HOME)
+         --------------------------------------------------------------------- -->
+    <section id="view-home" class="space-y-8">
+      
+      <!-- Banner de Bienvenida Blindado (WCAG AAA) -->
+      <div class="hero-banner p-6 sm:p-8 relative overflow-hidden">
+        <div class="relative z-10 max-w-2xl">
+          <span class="hero-badge mb-3">
+            <span>📖</span>
+            <span>Centro de Entrenamiento de Olivia · Tema 3</span>
+          </span>
+          <h2 class="text-2xl sm:text-4xl font-black font-display tracking-tight leading-tight mb-2 text-white">
+            Prefijos, Palabras Llanas y Demostrativos
+          </h2>
+          <p class="hero-p mb-6">
+            Entrena a fondo para el control oficial de Lengua Castellana de 4.º de Primaria. Domina los prefijos des-, in-, sub-, re- y pre-, la regla de oro de las palabras llanas (¡y su gran trampa de examen!), el radar espacial de los demostrativos y el diseño del cartel publicitario.
+          </p>
+          <div class="flex flex-wrap items-center gap-3">
+            <button onclick="app.navigate('misiones')" class="btn-bounce hero-btn-primary px-6 py-3 rounded-2xl text-sm font-black">
+              <span>Comenzar Misiones</span> <span>🚀</span>
+            </button>
+            <button onclick="app.navigate('examen')" class="btn-bounce hero-btn-secondary px-6 py-3 rounded-2xl text-sm font-black">
+              <span>Simulador de Examen</span> <span>🏆</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Barra de Progreso General -->
+      <div class="card-playful p-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+          <div class="flex items-center gap-2">
+            <span class="text-xl">🎒</span>
+            <h3 class="text-base font-black text-slate-900">Tu Progreso de Aprendizaje</h3>
+          </div>
+          <span id="home-progress-text" class="text-xs font-bold text-amber-800 bg-amber-50 px-3 py-1 rounded-full">
+            0 de 5 misiones completadas (0%)
+          </span>
+        </div>
+        <div class="w-full h-3 bg-slate-100 rounded-full overflow-hidden">
+          <div id="home-progress-bar" class="h-full bg-gradient-to-r from-amber-500 to-orange-500 rounded-full transition-all duration-500" style="width: 0%;"></div>
+        </div>
+
+        <!-- Cuadrícula de Medallas Conseguidas -->
+        <div class="mt-6 pt-5 border-t border-slate-100">
+          <p class="text-xs font-black uppercase tracking-wider text-slate-400 mb-3">Medallas de Saberes Básicos:</p>
+          <div id="home-badges-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-3">
+            <!-- Rellenado dinámicamente -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Cuadrícula de Accesos Rápidos a Módulos -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        
+        <div onclick="app.navigate('misiones')" class="card-playful p-5 cursor-pointer hover:border-amber-400 group">
+          <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center text-2xl mb-3 group-hover:scale-110 transition-transform">
+            🎯
+          </div>
+          <h4 class="text-base font-black text-slate-900">5 Misiones Didácticas</h4>
+          <p class="text-xs text-slate-500 font-semibold mt-1">25 preguntas formativas paso a paso con explicaciones didácticas de cada concepto.</p>
+        </div>
+
+        <div onclick="app.navigate('examen')" class="card-playful p-5 cursor-pointer hover:border-amber-400 group">
+          <div class="w-12 h-12 rounded-2xl bg-orange-100 text-orange-700 flex items-center justify-center text-2xl mb-3 group-hover:scale-110 transition-transform">
+            🏆
+          </div>
+          <h4 class="text-base font-black text-slate-900">Simulador de Examen</h4>
+          <p class="text-xs text-slate-500 font-semibold mt-1">Prueba A Competencial («El Artefacto Misterioso») y Prueba B Curricular con notas sobre 10.</p>
+        </div>
+
+        <div onclick="app.navigate('express')" class="card-playful p-5 cursor-pointer hover:border-amber-400 group">
+          <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-800 flex items-center justify-center text-2xl mb-3 group-hover:scale-110 transition-transform">
+            ⚡
+          </div>
+          <h4 class="text-base font-black text-slate-900">Desafío Express</h4>
+          <p class="text-xs text-slate-500 font-semibold mt-1">Rondas rápidas infinitas con contador de racha para repasar en cualquier momento libre.</p>
+        </div>
+
+        <div onclick="app.navigate('arcade')" class="card-playful p-5 cursor-pointer hover:border-amber-400 group">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-2xl mb-3 group-hover:scale-110 transition-transform">
+            🕹️
+          </div>
+          <h4 class="text-base font-black text-slate-900">Arcade Contrarreloj</h4>
+          <p class="text-xs text-slate-500 font-semibold mt-1">Juego de 45 segundos: clasifica prefijos vs trampas, llanas con/sin tilde y distancias espaciales.</p>
+        </div>
+
+        <div onclick="app.navigate('laboratorio')" class="card-playful p-5 cursor-pointer hover:border-amber-400 group">
+          <div class="w-12 h-12 rounded-2xl bg-purple-100 text-purple-700 flex items-center justify-center text-2xl mb-3 group-hover:scale-110 transition-transform">
+            🧪
+          </div>
+          <h4 class="text-base font-black text-slate-900">Laboratorio Interactivo</h4>
+          <p class="text-xs text-slate-500 font-semibold mt-1">Máquina de prefijos, báscula de llanas, radar 3D de demostrativos y creador de carteles.</p>
+        </div>
+
+        <div onclick="app.navigate('chuleta')" class="card-playful p-5 cursor-pointer hover:border-amber-400 group">
+          <div class="w-12 h-12 rounded-2xl bg-rose-100 text-rose-700 flex items-center justify-center text-2xl mb-3 group-hover:scale-110 transition-transform">
+            📖
+          </div>
+          <h4 class="text-base font-black text-slate-900">Esquemas y Diploma</h4>
+          <p class="text-xs text-slate-500 font-semibold mt-1">Cuadros resumen visuales para leer antes del examen y Diploma de Honor imprimible.</p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ---------------------------------------------------------------------
+         VISTA 2: MISIONES DIDÁCTICAS (5 MISIONES)
+         --------------------------------------------------------------------- -->
+    <section id="view-misiones" class="hidden space-y-6">
+      <div class="flex items-center justify-between border-b border-slate-200 pb-4">
+        <div>
+          <h2 class="text-2xl font-black text-slate-900">🎯 Misiones Didácticas</h2>
+          <p class="text-xs sm:text-sm text-slate-500 font-semibold">Supera los 5 bloques conceptuales y colecciona todas las insignias de 4.º</p>
+        </div>
+      </div>
+
+      <!-- Lista de Misiones -->
+      <div id="missions-list-container" class="space-y-4">
+        <!-- Rellenado dinámicamente -->
+      </div>
+
+      <!-- Contenedor del Test de la Misión Activa -->
+      <div id="mission-quiz-container" class="hidden">
+        <!-- Rellenado dinámicamente -->
+      </div>
+    </section>
+
+    <!-- ---------------------------------------------------------------------
+         VISTA 3: SIMULADOR DE EXAMEN
+         --------------------------------------------------------------------- -->
+    <section id="view-examen" class="hidden space-y-6">
+      
+      <!-- Selector de Examen -->
+      <div id="exam-selector" class="space-y-6">
+        <div class="border-b border-slate-200 pb-4">
+          <h2 class="text-2xl font-black text-slate-900">🏆 Simulador de Examen</h2>
+          <p class="text-xs sm:text-sm text-slate-500 font-semibold">Elige entre la Prueba Competencial contextualizada o el Control Curricular de saberes básicos</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          
+          <!-- Prueba A: Competencial -->
+          <div class="card-playful p-6 flex flex-col justify-between hover:border-amber-400">
+            <div>
+              <span class="text-xs font-black uppercase tracking-wider text-amber-800 bg-amber-50 px-3 py-1 rounded-full">
+                Prueba A
+              </span>
+              <h3 class="text-xl font-black text-slate-900 mt-3 mb-2">
+                Caso Competencial: «El Artefacto Misterioso»
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-600 font-semibold leading-relaxed mb-4">
+                El erizo Simón y la comadreja Leo acuden al sabio castor Tomás a la orilla del río. 10 preguntas competenciales con ejercicios de rellenar palabras, respuestas escritas y razonamiento.
+              </p>
+              <div class="flex items-center gap-2 text-xs font-bold text-slate-500 mb-6">
+                <span>⏱️ 10 preguntas</span>
+                <span>•</span>
+                <span>⭐ Puntuación sobre 10</span>
+                <span>•</span>
+                <span>📝 Tipo Santillana</span>
+              </div>
+            </div>
+            <button onclick="app.startExam('testA')" class="btn-bounce w-full py-3.5 rounded-xl font-black text-sm text-white bg-amber-600 hover:bg-amber-700 shadow-md">
+              Iniciar Prueba A 🚀
+            </button>
+          </div>
+
+          <!-- Prueba B: Curricular Oficial -->
+          <div class="card-playful p-6 flex flex-col justify-between hover:border-amber-400">
+            <div>
+              <span class="text-xs font-black uppercase tracking-wider text-orange-800 bg-orange-50 px-3 py-1 rounded-full">
+                Prueba B
+              </span>
+              <h3 class="text-xl font-black text-slate-900 mt-3 mb-2">
+                Control Oficial de Saberes Básicos
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-600 font-semibold leading-relaxed mb-4">
+                Evaluación formal de contenidos: derivación de prefijos, caza de intrusas, regla de tildes de palabras llanas con justificación escrita, cuadro de demostrativos y géneros narrativos.
+              </p>
+              <div class="flex items-center gap-2 text-xs font-bold text-slate-500 mb-6">
+                <span>⏱️ 10 preguntas</span>
+                <span>•</span>
+                <span>⭐ Puntuación sobre 10</span>
+                <span>•</span>
+                <span>🎯 Preguntas Trampa</span>
+              </div>
+            </div>
+            <button onclick="app.startExam('testB')" class="btn-bounce w-full py-3.5 rounded-xl font-black text-sm text-white bg-orange-600 hover:bg-orange-700 shadow-md">
+              Iniciar Prueba B 🚀
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Pantalla de Pregunta Activa del Examen -->
+      <div id="exam-active" class="hidden">
+        <div id="exam-question-card" class="card-playful">
+          <!-- Rellenado dinámicamente -->
+        </div>
+      </div>
+
+      <!-- Pantalla de Resultados y Desglose -->
+      <div id="exam-results" class="hidden">
+        <!-- Rellenado dinámicamente -->
+      </div>
+
+    </section>
+
+    <!-- ---------------------------------------------------------------------
+         VISTA 4: DESAFÍO EXPRESS
+         --------------------------------------------------------------------- -->
+    <section id="view-express" class="hidden space-y-6">
+      <div class="flex items-center justify-between border-b border-slate-200 pb-4">
+        <div>
+          <h2 class="text-2xl font-black text-slate-900">⚡ Desafío Express</h2>
+          <p class="text-xs sm:text-sm text-slate-500 font-semibold">Test infinito de preguntas rápidas aleatorias para mantener tu mente ágil</p>
+        </div>
+        <div class="flex items-center gap-2 bg-amber-50 border border-amber-300 px-3.5 py-1.5 rounded-full">
+          <span class="text-base">🔥</span>
+          <span class="text-xs font-black text-amber-900">Racha: <span id="express-streak">0</span></span>
+        </div>
+      </div>
+
+      <div id="express-card" class="card-playful max-w-2xl mx-auto">
+        <!-- Rellenado dinámicamente -->
+      </div>
+    </section>
+
+    <!-- ---------------------------------------------------------------------
+         VISTA 5: ARCADE CONTRARRELOJ (45 SEGUNDOS)
+         --------------------------------------------------------------------- -->
+    <section id="view-arcade" class="hidden space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200 pb-4">
+        <div>
+          <h2 class="text-2xl font-black text-slate-900">🕹️ Arcade Contrarreloj</h2>
+          <p id="arcade-desc" class="text-xs sm:text-sm text-slate-500 font-semibold">Clasifica a toda velocidad en 45 segundos y acumula combos multiplicadores</p>
+        </div>
+
+        <!-- Marcador de Tiempo y Puntuación -->
+        <div class="flex items-center gap-3">
+          <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-1.5 rounded-xl border border-slate-200 font-black text-xs text-slate-700">
+            <span>⏱️</span>
+            <span id="arcade-timer" class="arcade-card-timer text-amber-700 text-sm">45s</span>
+          </div>
+          <div class="flex items-center gap-1.5 bg-amber-50 px-3.5 py-1.5 rounded-xl border border-amber-300 font-black text-xs text-amber-900">
+            <span>⭐</span>
+            <span id="arcade-score" class="text-sm">0</span>
+          </div>
+          <div class="flex items-center gap-1 bg-orange-50 px-3 py-1.5 rounded-xl border border-orange-200 font-black text-xs text-orange-800">
+            <span id="arcade-streak">x1</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Selector de Modo de Juego -->
+      <div class="flex flex-wrap gap-2">
+        <button onclick="app.selectArcadeMode('prefijos')" id="arcade-mode-prefijos" class="arcade-mode-btn px-4 py-2 rounded-xl font-black text-xs sm:text-sm border-2 border-slate-200 bg-amber-600 text-white transition-colors">
+          ✨ ¿Prefijo Real o Trampa?
+        </button>
+        <button onclick="app.selectArcadeMode('tildes')" id="arcade-mode-tildes" class="arcade-mode-btn px-4 py-2 rounded-xl font-black text-xs sm:text-sm border-2 border-slate-200 bg-white text-slate-700 transition-colors">
+          ✍️ ¿Lleva Tilde o No? (Llanas)
+        </button>
+        <button onclick="app.selectArcadeMode('distancias')" id="arcade-mode-distancias" class="arcade-mode-btn px-4 py-2 rounded-xl font-black text-xs sm:text-sm border-2 border-slate-200 bg-white text-slate-700 transition-colors">
+          🧭 Radar de Distancias
+        </button>
+      </div>
+
+      <!-- Contenedor del Juego -->
+      <div id="arcade-game-card" class="card-playful max-w-xl mx-auto">
+        <!-- Rellenado dinámicamente -->
+      </div>
+    </section>
+
+    <!-- ---------------------------------------------------------------------
+         VISTA 6: LABORATORIO INTERACTIVO
+         --------------------------------------------------------------------- -->
+    <section id="view-laboratorio" class="hidden space-y-6">
+      <div class="border-b border-slate-200 pb-4">
+        <h2 class="text-2xl font-black text-slate-900">🧪 Explorador y Laboratorio Interactivo</h2>
+        <p class="text-xs sm:text-sm text-slate-500 font-semibold">Experimenta con prefijos, comprueba sílabas llanas, explora distancias espaciales y monta anuncios</p>
+      </div>
+
+      <!-- Pestañas del Laboratorio -->
+      <div class="flex flex-wrap gap-2">
+        <button onclick="app.setLabTab('prefijos')" id="lab-tab-prefijos" class="px-4 py-2 rounded-xl font-black text-xs sm:text-sm border-2 border-slate-200 bg-amber-600 text-white transition-colors">
+          🧪 Máquina de Prefijos
+        </button>
+        <button onclick="app.setLabTab('llanas')" id="lab-tab-llanas" class="px-4 py-2 rounded-xl font-black text-xs sm:text-sm border-2 border-slate-200 bg-white text-slate-700 transition-colors">
+          ⚖️ Báscula de Llanas
+        </button>
+        <button onclick="app.setLabTab('demostrativos')" id="lab-tab-demostrativos" class="px-4 py-2 rounded-xl font-black text-xs sm:text-sm border-2 border-slate-200 bg-white text-slate-700 transition-colors">
+          🧭 Radar 3D Demostrativos
+        </button>
+        <button onclick="app.setLabTab('publicidad')" id="lab-tab-publicidad" class="px-4 py-2 rounded-xl font-black text-xs sm:text-sm border-2 border-slate-200 bg-white text-slate-700 transition-colors">
+          📢 Taller del Anuncio
+        </button>
+      </div>
+
+      <!-- Contenido de la Pestaña Activa -->
+      <div id="lab-content-container">
+        <!-- Rellenado dinámicamente -->
+      </div>
+    </section>
+
+    <!-- ---------------------------------------------------------------------
+         VISTA 7: ESQUEMAS VISUALES Y DIPLOMA DE HONOR
+         --------------------------------------------------------------------- -->
+    <section id="view-chuleta" class="hidden space-y-8">
+      <div class="flex items-center justify-between border-b border-slate-200 pb-4 no-print">
+        <div>
+          <h2 class="text-2xl font-black text-slate-900">📖 Esquemas Visuales de Repaso</h2>
+          <p class="text-xs sm:text-sm text-slate-500 font-semibold">Resumen clave de saberes básicos para consultar antes de entrar al examen oficial</p>
+        </div>
+        <button onclick="app.printDiploma()" class="btn-bounce px-4 py-2 rounded-xl font-black text-xs sm:text-sm text-amber-800 bg-amber-100 hover:bg-amber-200 transition-colors flex items-center gap-1.5">
+          <span>🖨️</span>
+          <span>Imprimir Diploma</span>
+        </button>
+      </div>
+
+      <!-- Cuadrícula de Tarjetas de Esquemas -->
+      <div id="cheatsheet-cards" class="grid grid-cols-1 md:grid-cols-2 gap-4 no-print">
+        <!-- Rellenado dinámicamente -->
+      </div>
+
+      <!-- Diploma Oficial de Honor -->
+      <div class="card-playful p-8 sm:p-12 text-center max-w-2xl mx-auto border-4 border-amber-400 bg-gradient-to-b from-amber-50/50 via-white to-amber-50/30 diploma-card relative overflow-hidden">
+        <div class="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-amber-200/40 blur-2xl pointer-events-none"></div>
+        <div class="absolute -bottom-10 -left-10 w-32 h-32 rounded-full bg-orange-200/40 blur-2xl pointer-events-none"></div>
+
+        <div class="w-20 h-20 mx-auto rounded-3xl bg-amber-100 text-amber-600 flex items-center justify-center text-5xl mb-4 shadow-inner">
+          🎓
+        </div>
+        <span class="text-xs font-black uppercase tracking-widest text-amber-800 bg-amber-100 px-4 py-1 rounded-full">
+          Diploma Oficial de Excelencia Académica
+        </span>
+        <h2 class="text-2xl sm:text-4xl font-black text-slate-900 mt-4 mb-2 tracking-tight">
+          Certificado de Honor en Lengua Castellana
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-600 font-semibold mb-6">
+          Se otorga con el máximo reconocimiento escolar a la alumna:
+        </p>
+
+        <div class="my-6 py-3 px-6 bg-white border-2 border-amber-300 rounded-2xl inline-block shadow-sm">
+          <h3 id="diploma-student" class="text-2xl sm:text-3xl font-black text-amber-800 tracking-wide font-display">
+            Olivia
+          </h3>
+          <p class="text-[11px] font-bold text-slate-500 uppercase tracking-wider mt-0.5">4.º Educación Primaria · Santillana CLAVES</p>
+        </div>
+
+        <p class="text-xs sm:text-sm text-slate-700 font-semibold max-w-lg mx-auto leading-relaxed mb-6">
+          Por haber superado con sobresaliente el entrenamiento integral del <strong>Tema 3</strong>, demostrando un dominio absoluto en la formación de palabras derivadas con prefijos (<em>des-, in-, sub-, re-, pre-</em>), la regla de acentuación de las palabras llanas, la identificación de los demostrativos y la estructura de las obras narrativas y el anuncio publicitario.
+        </p>
+
+        <div class="grid grid-cols-3 gap-3 border-t border-b border-amber-200 py-4 my-6 text-xs font-bold text-slate-700">
+          <div>
+            <p class="text-slate-400 font-bold uppercase text-[10px]">Calificación</p>
+            <p id="diploma-grade" class="text-base font-black text-amber-700 mt-0.5">10 / 10</p>
+          </div>
+          <div>
+            <p class="text-slate-400 font-bold uppercase text-[10px]">Estrellas</p>
+            <p id="diploma-stars" class="text-base font-black text-amber-700 mt-0.5">0 ⭐</p>
+          </div>
+          <div>
+            <p class="text-slate-400 font-bold uppercase text-[10px]">Fecha</p>
+            <p id="diploma-date" class="text-xs font-black text-slate-800 mt-1">14 de Noviembre de 2026</p>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between pt-2 px-4 text-[11px] text-slate-500 font-semibold">
+          <div class="text-left">
+            <p class="font-black text-slate-700">Tutor Pedagógico</p>
+            <p>Entrenador Antigravity</p>
+          </div>
+          <div class="w-12 h-12 rounded-full border-2 border-amber-400 flex items-center justify-center text-xs font-black text-amber-800 bg-amber-50">
+            SELLO
+          </div>
+          <div class="text-right">
+            <p class="font-black text-slate-700">Proyecto Editorial</p>
+            <p>Santillana CLAVES</p>
+          </div>
+        </div>
+
+        <div class="mt-8 no-print">
+          <button onclick="app.printDiploma()" class="btn-bounce px-8 py-3.5 rounded-2xl font-black text-sm text-white bg-amber-600 hover:bg-amber-700 shadow-lg">
+            🖨️ Imprimir Diploma de Olivia
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       SCRIPTS JAVASCRIPT LOCALES (OFFLINE Y ALTA VELOCIDAD)
+       ========================================================================= -->
+  <script src="js/confetti.min.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>

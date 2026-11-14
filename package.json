@@ -1,0 +1,24 @@
+{
+  "name": "olivia-lengua-4-tema3",
+  "version": "1.0.0",
+  "description": "Aplicación web interactiva y pedagógica para preparar el examen del Tema 3 de Lengua Castellana (Prefijos, Palabras Llanas, Demostrativos, Obras Narrativas y el Anuncio) de 4.º de Primaria (Proyecto CLAVES / Grazalema-Santillana)",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 3000"
+  },
+  "keywords": [
+    "lengua-castellana",
+    "prefijos",
+    "palabras-llanas",
+    "acentuacion",
+    "demostrativos",
+    "obras-narrativas",
+    "anuncio-publicitario",
+    "4-primaria",
+    "santillana",
+    "claves",
+    "olivia"
+  ],
+  "author": "Fran Guerrero",
+  "license": "MIT"
+}
